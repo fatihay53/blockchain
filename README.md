@@ -120,4 +120,22 @@ docker inspect -f "{{ .RestartCount }}" cointaner name
 docker inspect -f "{{ .State.StartedAt }}"
 
 
+docker run -d -p 6001:2020 -p 7001:3030 -v mydexchain6001:/var/lib/postgresql/ --privileged --log-driver=none --name 6001 mydexchain/mydexchain:latest
+
+curl http://localhost:6001/setDextracker/f09017dca53f11eb9a3b02ca075254e8icARvV6zur
+
+curl http://localhost:6001/setStartDXCMiner/
+
+curl http://localhost:6001/setStartPRXMiner/
+
+curl http://localhost:6001/setJoinPool/aeaa7d21-c263-11eb-ad54-02ca075254e8
+
+
+
+
+
+
+
+
+
 
