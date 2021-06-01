@@ -72,3 +72,52 @@ sudo rm -rf /var/lib/containerd
 
 /setJoinPool/3c0882c9-bd17-11eb-9a3b-02ca075254e8
 
+
+
+
+
+ufw status 
+
+ufw disable (Y)
+
+
+
+apt update
+apt upgrade
+
+apt install docker.io -y
+systemctl enable --now docker
+systemctl start docker
+usermod -aG docker root 
+
+
+docker update --restart unless-stopped $(docker ps -q) 
+
+docker update --restart always $(docker ps -a -q --filter "status=exited")
+
+(Sunucu kapanıp açıldığında konteynırların son çalışma şekillerine geri dönmesini sağlayan komut)
+
+
+FIREWALL (GÜVENLİK DUVARI) YAPILANDIRMAK VE AKTİF ETMEK
+ufw allow 22 
+ufw allow 10000 
+ufw allow 2020 
+ufw allow 2053 
+ufw allow 4000
+ufw allow 1001:8000/tcp 
+ufw enable 
+systemctl restart ufw
+
+hostnamectl set-hostname sunucuadı
+hostnamectl set-hostname sunucuadı --pretty
+hostnamectl set-hostname sunucuadı --static
+hostnamectl set-hostname sunucuadı --transient
+
+
+
+docker restart $(docker ps -a -q)
+docker inspect -f "{{ .RestartCount }}" cointaner name
+docker inspect -f "{{ .State.StartedAt }}"
+
+
+
