@@ -6,6 +6,8 @@ chain adress number: XMD0f13e2b3-a536-11eb-9a3b-02ca075254e8
 
 tracker number: f09017dca53f11eb9a3b02ca075254e8icARvV6zur
 
+9e82dce4aa8611eb9a3b02ca075254e82cw4Hkcg7q
+
 
 
 free -m 									Ram Bilgisi Gösterir
